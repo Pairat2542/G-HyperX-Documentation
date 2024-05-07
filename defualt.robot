@@ -103,6 +103,7 @@ Process Nestle Extractor version 1.0.2 Workflow
         Remove Directory    ${img_path}    recursive=${TRUE}
         Create Directory    ${img_path}
         ${response}    Convert PDF To Img    ${Download_Path}    ${page}    ${img_path}    img    jpg    ${6}
+       	#									     resolution multiply   ^
         @{img_file}    Get Files Sorted Modified Date   ${img_path}
         ${csv_list} =    Create List
         ${error_page} =    Create List
@@ -116,7 +117,11 @@ Process Nestle Extractor version 1.0.2 Workflow
             TRY
                 ${Page_Count} =    Set Variable    ${Page_Count+1}
                 ${missing_value} =    Create List
-                
+
+		# important variable
+		# ${vision_key} google vision key variable
+		# ${i} current page
+
                 # Invalid page exam
 		# IF    ${check_page}
 		# 	...
@@ -126,7 +131,7 @@ Process Nestle Extractor version 1.0.2 Workflow
 		# END
 
 		# Invalid field exam
-		# TRY    ${check_page}
+		# TRY
 		# 	...
   		# EXCEPT
 		#	Append To List    ${missing_value}    Invoice date   <- field name
