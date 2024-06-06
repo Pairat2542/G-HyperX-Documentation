@@ -95,6 +95,28 @@ ${out} =    Join List    ${list}    -
 # result : Dog-Cat-Fish-Bird
 ```
 ##
+## Convert Date String Format
+Join value in list to string
+#### Format Code List
+%d : Day of the month as a zero-padded decimal. 01, 02, ..., 31
+%m : Month as a zero-padded decimal number. 01, 02, ..., 12
+%b : Abbreviated month name. Jan, Feb, ..., Dec
+%B : Full month name. January, February, ...
+%y : Year without century as a zero-padded decimal number. 00, 01, ..., 99
+%Y : Year with century as a decimal number. 2013, 2019 etc.
+#### Arguments
+- word : Input date string
+- oformat : Old date format ex. %d-%m-%Y
+- nformat : New date format ex. %d-%m-%Y
+  
+#### Example
+```robotframework
+${old_date} =    Set Variable    13/01/2024
+${new_date} =    Convert Date String Format    ${old_date}    %d/%m/%Y    %d %B %Y
+Log To Console    ${new_date} 
+# result : 13 January 2024
+```
+##
 ## Json To Dict
 Convert JSON string to dictionary
 
