@@ -98,12 +98,12 @@ ${out} =    Join List    ${list}    -
 ## Convert Date String Format
 Join value in list to string
 #### Format Code List
-%d : Day of the month as a zero-padded decimal. 01, 02, ..., 31
-%m : Month as a zero-padded decimal number. 01, 02, ..., 12
-%b : Abbreviated month name. Jan, Feb, ..., Dec
-%B : Full month name. January, February, ...
-%y : Year without century as a zero-padded decimal number. 00, 01, ..., 99
-%Y : Year with century as a decimal number. 2013, 2019 etc.
+- %d : Day of the month as a zero-padded decimal. 01, 02, ..., 31
+- %m : Month as a zero-padded decimal number. 01, 02, ..., 12
+- %b : Abbreviated month name. Jan, Feb, ..., Dec
+- %B : Full month name. January, February, ...
+- %y : Year without century as a zero-padded decimal number. 00, 01, ..., 99
+- %Y : Year with century as a decimal number. 2013, 2019 etc.
 #### Arguments
 - word : Input date string
 - oformat : Old date format ex. %d-%m-%Y
