@@ -1,4 +1,52 @@
 # GRPA Documentation
+# New features update !!!
+## Resize Image
+Resize image to specific size. Return "Success" or error message
+
+#### Arguments
+- input_img_path : Input image path to resize
+- output_img_path : Output image path from resized
+- width : Width size
+- height : Height size
+  
+#### Example
+```robotframework
+${in_path} =    Set Variable    old_image.jpg
+${out_path} =    Set Variable    output_image.jpg
+${status} =    Resize Image    ${in_path}    ${out_path}    2000    1500
+# result is "Success"
+```
+## Get Image Size
+Return image size in dictionary type. Dictionary key is "width" and "height"
+
+#### Arguments
+- input_img_path : Input image path
+  
+#### Example
+```robotframework
+${in_path} =    Set Variable    old_image.jpg
+${status} =    Get Image Size    ${in_path}
+Log To Console    Width = ${size['width']}
+Log To Console    Height = ${size['height']}
+# result is "Width = 2000" and "Height = 1500"
+```
+## Azure OCR Text With Vertex
+Azure OCR function with vertex. Can be use with "Match Area" function or another old function 
+
+#### Arguments
+- api_key : Azure vision key
+- endpoint : Azure enpoint
+- file_path : Input file to OCR
+  
+#### Example
+```robotframework
+${in_path} =    Set Variable    old_image.jpg
+${ocr_text} =    Azure OCR Text With Vertex    ${api_key}    ${endpoint}    ${in_path}
+${result} =    Match Area    ${ocr_text}    ${label}
+```
+#
+#
+# Old features
 ## Starts With
 Check string starts with some string return True/False
 
