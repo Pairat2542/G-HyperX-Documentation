@@ -342,7 +342,7 @@ Sorted vertex from OCR result by vertical size. return list of vertex like a res
 ```robotframework
 ...
 ${ocr_result} =    Google Vision Get OCR Text With Vertex    ${key}    ${input}
-${result} =    Sorted Vertexs To List    ${ocr_result}    20
+${result} =    Sorted Vertexs By Line    ${ocr_result}    20
 ```
 ##
 ## Write List To CSV
